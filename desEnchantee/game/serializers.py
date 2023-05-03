@@ -1,8 +1,13 @@
 from rest_framework import serializers
 from .models import Game
+from player.serializers import PlayerSerializer
+from enchantement.serializers import EnchantementSerializers
 
 
 class GameSerializer(serializers.ModelSerializer):
+    player_FK = PlayerSerializer(read_only=True)
+    enchantement_FK = EnchantementSerializers(read_only=True)
+
     class Meta:
         model = Game
         fields = '__all__'
@@ -15,3 +20,4 @@ class GameSerializer(serializers.ModelSerializer):
             des_number=validated_data['des_number']
         )
         return game
+

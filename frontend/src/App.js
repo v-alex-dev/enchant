@@ -4,6 +4,13 @@ import Games from './components/games';
 import PlayerList from './components/playerlist'
 import Party from "./components/party";
 
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+
+//core
+import "primereact/resources/primereact.min.css";
+
+
 
 function App() {
   return (
@@ -11,7 +18,7 @@ function App() {
          <Routes>
              <Route path='/' element={<PlayerList/>}/>
              <Route path='/party' element={<Party/>}/>
-             <Route path='/playerList' element={<Games/>}/>
+             <Route path='/games' element={<Games/>}/>
          </Routes>
      </BrowserRouter>
   );

@@ -4,31 +4,15 @@ import axios from 'axios';
 // Fonction pour créer un nouveau joueur
 export const createPlayer = async (newPlayer) => {
 
-    const url = 'http://127.0.0.1:8000/api';
-
-    const token = axios.post(`${url}/auth/`, {
-        username: 'admin',
-        password: '1234'
-    })
-        .then(response => {
-            return response.data.token;
-
-        })
-        .catch(error => {
-            console.log(error.response.data);
-        });
+    const url = 'http://127.0.0.1:8000/';
     try {
-        const playerResponse = await axios.post(`${url}/players/create/`,
+        const playerResponse = await axios.post(`${url}players/`,
             {
                 firstName: newPlayer.firstName,
                 lastName: newPlayer.lastName,
                 world: newPlayer.world,
-            }, {
-                headers: {
-                    'Authorization': `Token ${token}`
-                }
-            });
 
+            });
         // Retourner la réponse de l'API
         return playerResponse.data;
     } catch (error) {

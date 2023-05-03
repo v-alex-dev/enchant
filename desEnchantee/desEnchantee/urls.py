@@ -23,7 +23,7 @@ from party.views import PartyViewSet
 from game.views import GameViewSet
 
 router = routers.DefaultRouter()
-router.register(r'player', PlayerViewSet)
+router.register(r'players', PlayerViewSet)
 router.register(r'enchantement', EnchantementViewSet)
 router.register(r'partyDate', PartyViewSet)
 router.register(r'game', GameViewSet)
