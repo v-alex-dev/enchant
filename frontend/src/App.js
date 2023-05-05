@@ -1,7 +1,6 @@
 import './App.css';
 import {Routes, BrowserRouter, Route} from 'react-router-dom';
 import Games from './components/games';
-import PlayerList from './components/playerlist'
 import Party from "./components/party";
 
 //theme
@@ -16,8 +15,7 @@ function App() {
   return (
      <BrowserRouter>
          <Routes>
-             <Route path='/' element={<PlayerList/>}/>
-             <Route path='/party' element={<Party/>}/>
+             <Route path='/' element={<Party/>}/>
              <Route path='/games' element={<Games/>}/>
          </Routes>
      </BrowserRouter>

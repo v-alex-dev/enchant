@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import {DataTable} from "primereact/datatable";
-import { classNames } from 'primereact/utils';
-import {getAllGame} from "../api/gameApi";
+import { getGameByParty, last_party} from "../api/gameApi";
 import {Column} from "primereact/column";
 import {InputText} from "primereact/inputtext";
+import "./style.css";
 
 function Games() {
     const [games, setGames] = useState()
     const [globalFilter, setGlobalFilter] = useState(null);
 
     useEffect(() => {
-        getAllGame().then(data => setGames(data))
+        last_party().then(data => {
+            getGameByParty(data.id).then(gamesData => setGames(gamesData))
+        })
     }, [])
 
     const header = (
@@ -26,6 +28,14 @@ function Games() {
 
     return (
         <section className={'game'}>
+            <div className="gameHeader">
+                <div className="player">
+                    <span>New player</span>
+                </div>
+                <div className="gage">
+                    <span>Nouveaux gage</span>
+                </div>
+            </div>
             <div className="card">
                 <DataTable value={games}
                            tableStyle={{ minWidth: '50rem' }}
