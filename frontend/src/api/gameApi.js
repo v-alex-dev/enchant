@@ -32,6 +32,15 @@ export const postPartyDate = async (date) =>{
         throw error;
     }
 };
+export const createGame  = async (newGame) => {
+    try {
+        const gameResponse = await axios.post(`${url}game/`, newGame);
+        return gameResponse.data;
+    } catch (error) {
+        console.log(error.response.data);
+        throw error;
+    }
+};
 
 export const last_party = async () =>{
     try {

@@ -21,10 +21,12 @@ const PlayerList = () => {
         event.preventDefault();
         try {
             const response = await createPlayer(newPlayer);
-            console.log(response.data); // handle success response
         } catch (error) {
             console.error(error); // handle error response
         }
+    };
+    const handleRefreshPage = () => {
+        window.location.reload();
     };
 
     return (
@@ -43,7 +45,7 @@ const PlayerList = () => {
                     <label htmlFor="world">World</label>
                     <InputText id="world" name="world" value={newPlayer.world} onChange={handleChange} />
                 </div>
-                <Button label="Create Player" icon="pi pi-check" type="submit" />
+                <Button label="Create Player" icon="pi pi-check" type="submit" onClick={handleRefreshPage}/>
             </form>
         </div>
     );

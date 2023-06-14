@@ -27,10 +27,8 @@ router.register(r'players', PlayerViewSet)
 router.register(r'enchantement', EnchantementViewSet)
 router.register(r'partyDate', PartyViewSet)
 router.register(r'game', GameViewSet)
-api = 'api/'
 
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path(api, include('authentification.authUrl')),
 ]

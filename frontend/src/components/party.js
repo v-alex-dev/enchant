@@ -19,9 +19,13 @@ const NewGame = () => {
         }
     }
 
+    const handleClick = () =>{
+        postDate();
+    }
+
     return (
         <section className='mainPage'>
-            <div className='newGame' onClick={postDate}>
+            <div className='newGame' onClick={handleClick}>
                 <GiDiceFire className='icone'/>
                 <span>Nouvelle partie</span>
             </div>

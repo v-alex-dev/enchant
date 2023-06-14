@@ -8,6 +8,8 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 //core
 import "primereact/resources/primereact.min.css";
+import PlayerList from './components/playerlist';
+import Enchantement from "./components/enchantement";
 
 
 
@@ -17,6 +19,8 @@ function App() {
          <Routes>
              <Route path='/' element={<Party/>}/>
              <Route path='/games' element={<Games/>}/>
+             <Route path='/player' element={<PlayerList/>}/>
+             <Route path='/enchatement' element={<Enchantement/>}/>
          </Routes>
      </BrowserRouter>
   );

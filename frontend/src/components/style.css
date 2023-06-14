@@ -13,7 +13,6 @@
     width:33vh;
     height: 33vh;
     background-color: #f15353;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -23,6 +22,11 @@
     box-shadow: 8px 8px gainsboro;
     transition: 1.3s;
 
+}
+
+span{
+    text-align:center;
+    margin: 0 auto;
 }
 
 .icone{
@@ -57,4 +61,40 @@
 .newGame:hover{
     box-shadow: 15px 15px 9px 9px gainsboro;
     transition: 1.3s;
+}
+
+th{
+    padding: 2.5rem;
+    font-size: x-large;
+}
+td{
+    padding: 2.5rem;
+    font-size: x-large;
+
+}
+tbody{
+  border:solid;
+}
+
+button{
+    width:10rem;
+    height: 5rem;
+    border-radius: 35%;
+    background-color: #f15353;
+    color: whitesmoke;
+    font-size: large;
+}
+.panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+section{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }

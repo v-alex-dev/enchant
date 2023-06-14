@@ -1,10 +1,10 @@
 import axios from 'axios';
-
+const url = 'http://127.0.0.1:8000/';
 
 // Fonction pour créer un nouveau joueur
 export const createPlayer = async (newPlayer) => {
 
-    const url = 'http://127.0.0.1:8000/';
+
     try {
         const playerResponse = await axios.post(`${url}players/`,
             {
@@ -24,7 +24,17 @@ export const createPlayer = async (newPlayer) => {
 // Fonction pour récupérer tous les joueurs
 export const getPlayers = async () => {
     try {
-        const response = await axios.get(`players/`);
+        const response = await axios.get(`${url}players/`);
+        console.log(response.data)
+        return response;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+};
+export const getPlayerById = async (id) => {
+    try {
+        const response = await axios.get(`${url}players/${id}`);
         console.log(response.data)
         return response;
     } catch (error) {
